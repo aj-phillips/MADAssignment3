@@ -1,6 +1,36 @@
 <resources>
+    <!-- App and fragment Titles -->
     <string name="app_name">Assignment3</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_courses">Courses</string>
+    <string name="title_societies">Societies</string>
+
+    <!-- Preference Titles -->
+    <string name="account_header">Account</string>
+    <string name="device_header">Device Features</string>
+    <string name="information_header">Device Information</string>
+    <string name="other_header">Other</string>
+
+    <!-- Account Preferences -->
+    <string name="name_title">Name</string>
+    <string name="dob_title">Date of Birth</string>
+    <string name="gender_title">Gender</string>
+
+    <!-- Device Features Preferences -->
+    <string name="geolocation_title">Test Geolocation</string>
+    <string name="geolocation_desc">Click here to test geolocation on the device</string>
+
+    <!-- Device Information Preferences -->
+    <string name="battery_title">Battery Level</string>
+    <string name="connectivity_title">Battery Level</string>
+    <string name="storage_title">Battery Level</string>
+    <string name="refresh_title">Refresh</string>
+    <string name="refresh_desc">Click here to refresh the device information</string>
+
+    <!-- Other Preferences -->
+    <string name="data_title">Data</string>
+    <string name="reset_title">Reset Storage Data</string>
+    <string name="reset_desc">Click here to reset stored preferences</string>
+
 </resources>

@@ -1,0 +1,84 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Account -->
+    <PreferenceCategory app:title="@string/account_header" app:iconSpaceReserved="false">
+
+        <EditTextPreference
+            app:iconSpaceReserved="false"
+            app:key="name"
+            app:title="@string/name_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:iconSpaceReserved="false"
+            app:defaultValue="Prefer not to say"
+            app:entries="@array/gender_entries"
+            app:entryValues="@array/gender_values"
+            app:key="gender"
+            app:title="@string/gender_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <!-- Device features -->
+    <PreferenceCategory app:title="@string/device_header" app:iconSpaceReserved="false">
+
+        <!-- Acts as a button -->
+        <Preference
+            app:iconSpaceReserved="false"
+            android:key="testGeolocationBtn"
+            android:summary="@string/geolocation_desc"
+            android:title="@string/geolocation_title" />
+
+    </PreferenceCategory>
+
+    <!-- Device information -->
+    <PreferenceCategory app:title="@string/information_header" app:iconSpaceReserved="false">
+
+        <Preference
+            app:iconSpaceReserved="false"
+            android:key="pref_battery_level"
+            android:selectable="false"
+            android:persistent="false"
+            android:title="Battery Level"
+            android:summary=""/>
+
+        <Preference
+            app:iconSpaceReserved="false"
+            android:key="pref_connectivity_state"
+            android:selectable="false"
+            android:persistent="false"
+            android:title="Connectivity State"
+            android:summary=""/>
+
+        <Preference
+            app:iconSpaceReserved="false"
+            android:key="pref_storage_capacity"
+            android:selectable="false"
+            android:persistent="false"
+            android:title="Storage Capacity"
+            android:summary=""/>
+
+        <!-- Acts as a button -->
+        <Preference
+            app:iconSpaceReserved="false"
+            android:key="refreshDeviceInformation"
+            android:summary="@string/refresh_desc"
+            android:title="@string/refresh_title" />
+
+    </PreferenceCategory>
+
+    <!-- Other features -->
+    <PreferenceCategory app:title="@string/other_header" app:iconSpaceReserved="false">
+
+        <!-- Acts as a button -->
+        <Preference
+            app:iconSpaceReserved="false"
+            android:key="resetStorageData"
+            android:summary="@string/reset_desc"
+            android:title="@string/reset_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
