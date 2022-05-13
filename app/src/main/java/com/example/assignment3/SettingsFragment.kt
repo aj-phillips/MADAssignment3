@@ -43,22 +43,27 @@ class SettingsFragment : PreferenceFragmentCompat() {
         fun deletePreferences()
         {
             // Deletes all preferences stored - can't really error out
-            this.context?.let { PreferenceManager.getDefaultSharedPreferences(it).edit().clear().apply() }
+            this.context?.let {
+                PreferenceManager.getDefaultSharedPreferences(it).edit().clear().apply()
+            }
 
             // If we've already got permissions to manage external storage
             if (Environment.isExternalStorageManager()) {
                 // Set file variable to our ProfileImage.jpg
-                val file = File(Environment.getExternalStorageDirectory(), "/Android/media/com.example.assignment3/ProfileImage.jpg")
+                val file = File(Environment.getExternalStorageDirectory(),
+                    "/Android/media/com.example.assignment3/ProfileImage.jpg")
 
                 // If the file exists, try to delete it, else just return, as there's nothing to be done
                 if (file.exists()) {
                     val result = file.delete()
 
                     if (result){
-                        Toast.makeText(this.context, "Profile image successfully removed", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this.context, "Profile image successfully removed",
+                            Toast.LENGTH_SHORT).show()
                     }
                     else {
-                        Toast.makeText(this.context, "Profile image failed to be removed", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this.context, "Profile image failed to be removed",
+                            Toast.LENGTH_SHORT).show()
                     }
                 }
                 else {
