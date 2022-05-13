@@ -13,6 +13,8 @@
     <string name="other_header">Other</string>
 
     <!-- Account Preferences -->
+    <string name="profile_title">Profile Picture</string>
+    <string name="profile_summary">Tap here to add your profile picture</string>
     <string name="name_title">Name</string>
     <string name="dob_title">Date of Birth</string>
     <string name="gender_title">Gender</string>

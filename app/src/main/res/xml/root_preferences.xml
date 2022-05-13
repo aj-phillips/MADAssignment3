@@ -4,6 +4,12 @@
     <!-- Account -->
     <PreferenceCategory app:title="@string/account_header" app:iconSpaceReserved="false">
 
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="profilePicture"
+            app:title="@string/profile_title"
+            android:summary="@string/profile_summary"/>
+
         <EditTextPreference
             app:iconSpaceReserved="false"
             app:key="name"
@@ -30,42 +36,6 @@
             android:key="testGeolocationBtn"
             android:summary="@string/geolocation_desc"
             android:title="@string/geolocation_title" />
-
-    </PreferenceCategory>
-
-    <!-- Device information -->
-    <PreferenceCategory app:title="@string/information_header" app:iconSpaceReserved="false">
-
-        <Preference
-            app:iconSpaceReserved="false"
-            android:key="pref_battery_level"
-            android:selectable="false"
-            android:persistent="false"
-            android:title="Battery Level"
-            android:summary=""/>
-
-        <Preference
-            app:iconSpaceReserved="false"
-            android:key="pref_connectivity_state"
-            android:selectable="false"
-            android:persistent="false"
-            android:title="Connectivity State"
-            android:summary=""/>
-
-        <Preference
-            app:iconSpaceReserved="false"
-            android:key="pref_storage_capacity"
-            android:selectable="false"
-            android:persistent="false"
-            android:title="Storage Capacity"
-            android:summary=""/>
-
-        <!-- Acts as a button -->
-        <Preference
-            app:iconSpaceReserved="false"
-            android:key="refreshDeviceInformation"
-            android:summary="@string/refresh_desc"
-            android:title="@string/refresh_title" />
 
     </PreferenceCategory>
 
