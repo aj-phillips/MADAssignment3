@@ -122,7 +122,7 @@ class CameraActivity : AppCompatActivity() {
         imageCapture?.let {
             //create file with fileName
             val file = File(externalMediaDirs[0],
-                "ProfileImage")
+                "ProfileImage.jpg")
 
             //save image in above file
             val outputFileOptions =
