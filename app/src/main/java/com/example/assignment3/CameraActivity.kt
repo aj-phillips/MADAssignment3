@@ -3,6 +3,7 @@ package com.example.assignment3
 import android.Manifest
 import android.content.DialogInterface
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
@@ -22,6 +23,7 @@ import androidx.camera.view.PreviewView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
+import androidx.preference.PreferenceManager
 import com.google.common.util.concurrent.ListenableFuture
 import java.io.File
 import java.util.concurrent.ExecutorService
@@ -57,7 +59,7 @@ class CameraActivity : AppCompatActivity() {
         cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 
         //set default to back camera
-        cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+        cameraSelector = CameraSelector.DEFAULT_FRONT_CAMERA
 
         //check for permissions (similar to other sensors)
         if (ActivityCompat.checkSelfPermission( this, Manifest.permission.CAMERA ) != PackageManager.PERMISSION_GRANTED )
@@ -88,7 +90,7 @@ class CameraActivity : AppCompatActivity() {
     }
 
     //listen for data from camera fun
-    fun startCamera() {
+    private fun startCamera() {
         cameraProviderFuture.addListener({
             //create ProcessCameraProvider instance
             val cameraProvider = cameraProviderFuture.get()
@@ -118,7 +120,7 @@ class CameraActivity : AppCompatActivity() {
     }
 
     //take photo
-    fun takePhoto() {
+    private fun takePhoto() {
         imageCapture?.let {
             //create file with fileName
             val file = File(externalMediaDirs[0],
@@ -137,10 +139,32 @@ class CameraActivity : AppCompatActivity() {
                     override fun onImageSaved(outputFileResults:
                                               ImageCapture.OutputFileResults) {
                         Log.i(TAG, "Image saved in ${file.toUri()}")
+
+                        val preferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
+                        val editor = preferences?.edit()
+
+                        if (!preferences?.all?.containsKey("image_taken")!!)
+                        {
+                            editor?.putBoolean("image_taken", true)
+                        }
+
+                        editor?.putBoolean("image_taken", true)
+                        editor?.apply()
                     }
                     override fun onError(exception: ImageCaptureException) {
-                        Toast.makeText( getApplicationContext(), "Error taking photo", Toast.LENGTH_LONG ).show()
+                        Toast.makeText(applicationContext, "Error taking photo", Toast.LENGTH_LONG ).show()
                         Log.i(TAG, "Error taking photo: $exception")
+
+                        val preferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
+                        val editor = preferences?.edit()
+
+                        if (!preferences?.all?.containsKey("image_taken")!!)
+                        {
+                            editor?.putBoolean("image_taken", false)
+                        }
+
+                        editor?.putBoolean("image_taken", false)
+                        editor?.apply()
                     }
                 }
             )

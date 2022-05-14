@@ -32,6 +32,30 @@ class SettingsFragment : PreferenceFragmentCompat() {
         }
     }
 
+    // Checks and sets default preferences
+    private fun setDefaultPreferences()
+    {
+        val preferences = this.context?.let { PreferenceManager.getDefaultSharedPreferences(it) }
+        val editor = preferences?.edit()
+
+        if (!preferences?.all?.containsKey("name")!!)
+        {
+            editor?.putString("name", "Guest")
+        }
+
+        if (!preferences.all?.containsKey("gender")!!)
+        {
+            editor?.putString("gender", "Prefer_not_to_say")
+        }
+
+        if (!preferences.all?.containsKey("image_taken")!!)
+        {
+            editor?.putBoolean("image_taken", false)
+        }
+
+        editor?.apply()
+    }
+
     // Open the separate camera activity
     private fun openCamera() {
         val openCameraActivity = Intent(activity, CameraActivity::class.java)
@@ -90,8 +114,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
         fun refreshScreen() {
             preferenceScreen = null
             addPreferencesFromResource(R.xml.root_preferences)
-
-            Toast.makeText(this.context, "Preferences reset", Toast.LENGTH_SHORT).show()
         }
 
         // Dialog box for easier management and organisation of the reset function
@@ -102,11 +124,13 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
             builder.setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
                 deletePreferences()
+                Toast.makeText(this.context, "Preferences reset", Toast.LENGTH_SHORT).show()
+                setDefaultPreferences()
                 refreshScreen()
             }
 
             builder.setNegativeButton("No") { dialogInterface: DialogInterface, i: Int ->
-                refreshScreen()
+
             }
 
             builder.show()

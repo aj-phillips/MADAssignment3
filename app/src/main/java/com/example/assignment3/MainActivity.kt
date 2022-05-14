@@ -6,6 +6,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.preference.PreferenceManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setDefaultPreferences()
 
         // nav_view references the bottom navigation bar in activity_main.xml
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
@@ -30,5 +32,29 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         bottomNavigationView.setupWithNavController(navController)
+    }
+
+    // Checks and sets default preferences
+    private fun setDefaultPreferences()
+    {
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        val editor = preferences?.edit()
+
+        if (!preferences?.all?.containsKey("name")!!)
+        {
+            editor?.putString("name", "Guest")
+        }
+
+        if (!preferences.all?.containsKey("gender")!!)
+        {
+            editor?.putString("gender", "Prefer_not_to_say")
+        }
+
+        if (!preferences.all?.containsKey("image_taken")!!)
+        {
+            editor?.putBoolean("image_taken", false)
+        }
+
+        editor?.apply()
     }
 }

@@ -1,10 +1,16 @@
 package com.example.assignment3
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
+import de.hdodenhof.circleimageview.CircleImageView
+import java.io.File
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,6 +41,40 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Get all perferences and store the name inside of namePref
+        val preferences = this.context?.let { PreferenceManager.getDefaultSharedPreferences(it) }
+        val namePref = preferences?.getString("name", "")
+        val imageTakenPref = preferences?.getBoolean("image_taken", true)
+
+        // Find components on the screen
+        val nameText: TextView = view.findViewById(R.id.homeGreeting) as TextView
+        val profileImage: CircleImageView = view.findViewById(R.id.profileImage)
+
+        nameText.text = "Hello ${namePref.toString()}"
+
+        if (imageTakenPref!!)
+        {
+            profileImage.rotation = 90F
+            setImageFromPath("storage/emulated/0/Android/media/com.example.assignment3/ProfileImage.jpg",
+                profileImage)
+        }
+    }
+
+    private fun setImageFromPath(imagePath: String, imageView: CircleImageView){
+        val imgFile = File(imagePath)
+        if (imgFile.exists()) {
+            val bitmap = BitmapFactory.decodeFile(imgFile.absolutePath)
+            imageView.setImageBitmap(bitmap)
+        }
+    }
+
+    private fun rotateImage(bitmap: Bitmap) {
+
     }
 
     companion object {

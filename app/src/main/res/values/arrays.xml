@@ -9,6 +9,6 @@
     <string-array name="gender_values">
         <item>Male</item>
         <item>Female</item>
-        <item>Prefer not to say</item>
+        <item>Prefer_not_to_say</item>
     </string-array>
 </resources>
