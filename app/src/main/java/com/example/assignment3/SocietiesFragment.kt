@@ -5,6 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.OrientationHelper
+import androidx.recyclerview.widget.RecyclerView
+import com.androidnetworking.AndroidNetworking
+import com.androidnetworking.error.ANError
+import com.androidnetworking.interfaces.ParsedRequestListener
+import com.example.assignment3.model.Course
+import com.example.assignment3.model.society.Data
+import com.example.assignment3.model.society.Society
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,12 +31,32 @@ class SocietiesFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val dataList: MutableList<Data> = mutableListOf()
+    private lateinit var societyAdapter: SocietyAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        societyAdapter = SocietyAdapter(dataList)
+
+        AndroidNetworking.initialize(context)
+
+        AndroidNetworking.get("https://leg1tt.github.io/JsonData/societies.json").build()
+            .getAsObject(Society::class.java, object : ParsedRequestListener<Society> {
+                override fun onResponse(response: Society?) {
+                    response?.let { dataList.addAll(it.data) }
+                    societyAdapter.notifyDataSetChanged()
+                }
+
+                override fun onError(anError: ANError?) {
+                    TODO("Not yet implemented")
+                }
+
+            })
     }
 
     override fun onCreateView(
@@ -35,6 +65,15 @@ class SocietiesFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_societies, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val recyclerViewComponent = view.findViewById<RecyclerView>(R.id.societiesList)
+        recyclerViewComponent.layoutManager = LinearLayoutManager(this.context)
+        recyclerViewComponent.addItemDecoration(DividerItemDecoration(this.context, OrientationHelper.VERTICAL))
+        recyclerViewComponent.adapter = societyAdapter
     }
 
     companion object {
