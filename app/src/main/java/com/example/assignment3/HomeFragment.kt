@@ -1,6 +1,5 @@
 package com.example.assignment3
 
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -46,7 +45,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Get all perferences and store the name inside of namePref
+        // Get all preferences and store the name inside of namePref
         val preferences = this.context?.let { PreferenceManager.getDefaultSharedPreferences(it) }
         val namePref = preferences?.getString("name", "")
         val imageTakenPref = preferences?.getBoolean("image_taken", true)
@@ -55,7 +54,7 @@ class HomeFragment : Fragment() {
         val nameText: TextView = view.findViewById(R.id.homeGreeting) as TextView
         val profileImage: CircleImageView = view.findViewById(R.id.profileImage)
 
-        nameText.text = "Hello ${namePref.toString()}"
+        nameText.text = "Welcome to our open day, ${namePref.toString()}"
 
         if (imageTakenPref!!)
         {
@@ -71,10 +70,6 @@ class HomeFragment : Fragment() {
             val bitmap = BitmapFactory.decodeFile(imgFile.absolutePath)
             imageView.setImageBitmap(bitmap)
         }
-    }
-
-    private fun rotateImage(bitmap: Bitmap) {
-
     }
 
     companion object {

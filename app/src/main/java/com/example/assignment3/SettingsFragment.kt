@@ -122,14 +122,14 @@ class SettingsFragment : PreferenceFragmentCompat() {
             builder.setTitle("Deletion Confirmation")
             builder.setMessage("Do you want to delete your app data?")
 
-            builder.setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
+            builder.setPositiveButton("Yes") { _: DialogInterface, _: Int ->
                 deletePreferences()
                 Toast.makeText(this.context, "Preferences reset", Toast.LENGTH_SHORT).show()
                 setDefaultPreferences()
                 refreshScreen()
             }
 
-            builder.setNegativeButton("No") { dialogInterface: DialogInterface, i: Int ->
+            builder.setNegativeButton("No") { _: DialogInterface, _: Int ->
 
             }
 
