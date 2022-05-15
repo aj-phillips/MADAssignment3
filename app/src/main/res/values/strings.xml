@@ -1,38 +1,42 @@
 <resources>
     <!-- App and fragment Titles -->
-        <string name="app_name">Assignment3</string>
-        <string name="title_home">Home</string>
-        <string name="title_settings">Settings</string>
-        <string name="title_courses">Courses</string>
-        <string name="title_societies">Societies</string>
+    <string name="app_name">Assignment3</string>
+    <string name="title_home">Home</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_courses">Courses</string>
+    <string name="title_societies">Societies</string>
 
     <!-- Camera Activity -->
     <string name="camera_button_text">Take Photo</string>
 
-    <!-- Home Fragment -->
-        <string name="default_greeting_name">Hello Guest</string>
-        <string name="uni_image_content_desc">Picture of a university</string>
-        <string name="intro_text">At one of our fantastic on-campus Open Days, you’ll be able to discover everything you need to know about why our award-winning institution is the first choice for thousands of students around the world.</string>
-        <string name="continued_text">We know there\'s nothing quite like actually stepping onto campus to discover our facilities, check out our accommodation, learn more about your chosen course and meet your potential future lecturers  - but if you\'re unable to come onto campus, we also offer the next best thing: Virtual Open Days. These give you the chance to find out about everything Staffordshire University has to offer from the comfort of your own home.</string>
+    <!-- Geolocation Activity -->
+    <string name="latitude_text">Latitude:</string>
+    <string name="longitude_text">Longitude:</string>
 
-        <!-- Table Strings -->
-        <string name="table_upcoming_header">Upcoming Dates</string>
-        <string name="table_site_header">Site</string>
-        <string name="table_building_header">Building</string>
-        <string name="table_date_header">Date/Time</string>
-        <string name="table_site_stoke">Stoke-On-Trent</string>
-        <string name="table_building_mellor">Mellor</string>
-        <string name="table_building_catalyst">Catalyst</string>
-        <string name="table_building_cadman">Cadman</string>
-        <string name="table_building_date1">14/06/2022 09:30am</string>
-        <string name="table_building_date2">21/06/2022 11:00am</string>
-        <string name="table_building_date3">14/06/2022 13:30pm</string>
+    <!-- Home Fragment -->
+    <string name="default_greeting_name">Hello Guest</string>
+    <string name="uni_image_content_desc">Picture of a university</string>
+    <string name="intro_text">At one of our fantastic on-campus Open Days, you’ll be able to discover everything you need to know about why our award-winning institution is the first choice for thousands of students around the world.</string>
+    <string name="continued_text">We know there\'s nothing quite like actually stepping onto campus to discover our facilities, check out our accommodation, learn more about your chosen course and meet your potential future lecturers  - but if you\'re unable to come onto campus, we also offer the next best thing: Virtual Open Days. These give you the chance to find out about everything Staffordshire University has to offer from the comfort of your own home.</string>
+
+    <!-- Table Strings -->
+    <string name="table_upcoming_header">Upcoming Dates</string>
+    <string name="table_site_header">Site</string>
+    <string name="table_building_header">Building</string>
+    <string name="table_date_header">Date/Time</string>
+    <string name="table_site_stoke">Stoke-On-Trent</string>
+    <string name="table_building_mellor">Mellor</string>
+    <string name="table_building_catalyst">Catalyst</string>
+    <string name="table_building_cadman">Cadman</string>
+    <string name="table_building_date1">14/06/2022 09:30am</string>
+    <string name="table_building_date2">21/06/2022 11:00am</string>
+    <string name="table_building_date3">14/06/2022 13:30pm</string>
     <!-- Home Fragment -->
 
     <!-- Course Item View -->
-        <string name="course_image_desc">Picture of the course subject</string>
-        <string name="course_title">Course Title</string>
-        <string name="course_summary">Course Summary</string>
+    <string name="course_image_desc">Picture of the course subject</string>
+    <string name="course_title">Course Title</string>
+    <string name="course_summary">Course Summary</string>
     <!-- Course Item View -->
 
     <!-- Society Item View -->
@@ -42,27 +46,27 @@
     <!-- Society Item View -->
 
     <!-- Settings Fragment -->
-        <!-- Preference Titles -->
-        <string name="account_header">Account</string>
-        <string name="device_header">Device Features</string>
-        <string name="information_header">Device Information</string>
-        <string name="other_header">Other</string>
+    <!-- Preference Titles -->
+    <string name="account_header">Account</string>
+    <string name="device_header">Device Features</string>
+    <string name="information_header">Device Information</string>
+    <string name="other_header">Other</string>
 
-        <!-- Account Preferences -->
-        <string name="profile_title">Profile Picture</string>
-        <string name="profile_summary">Tap here to add your profile picture</string>
-        <string name="name_title">Name</string>
-        <string name="dob_title">Date of Birth</string>
-        <string name="gender_title">Gender</string>
+    <!-- Account Preferences -->
+    <string name="profile_title">Profile Picture</string>
+    <string name="profile_summary">Tap here to add your profile picture</string>
+    <string name="name_title">Name</string>
+    <string name="dob_title">Date of Birth</string>
+    <string name="gender_title">Gender</string>
 
-        <!-- Device Features Preferences -->
-        <string name="geolocation_title">Test Geolocation</string>
-        <string name="geolocation_desc">Click here to test geolocation on the device</string>
+    <!-- Device Features Preferences -->
+    <string name="geolocation_title">Test Geolocation</string>
+    <string name="geolocation_desc">Click here to test geolocation on the device</string>
 
-        <!-- Other Preferences -->
-        <string name="data_title">Data</string>
-        <string name="reset_title">Reset Storage Data</string>
-        <string name="reset_desc">Click here to reset stored preferences</string>
+    <!-- Other Preferences -->
+    <string name="data_title">Data</string>
+    <string name="reset_title">Reset Storage Data</string>
+    <string name="reset_desc">Click here to reset stored preferences</string>
     <!-- Settings Fragment -->
 
 </resources>
