@@ -46,13 +46,13 @@
         <!--Image reference: https://unsplash.com/photos/MZxqc6n9qCw-->
         <ImageView
             android:id="@+id/universityImage"
-            android:layout_width="400dp"
+            android:layout_width="wrap_content"
             android:layout_height="150dp"
             android:scaleType="fitXY"
             android:src="@drawable/university"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:contentDescription="@string/uni_image_content_desc"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -62,10 +62,10 @@
         (https://www.staffs.ac.uk/visit/undergraduate-open-day) -->
         <TextView
             android:id="@+id/introText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:layout_marginTop="10dp"
             android:text="@string/intro_text"
             app:layout_constraintTop_toBottomOf="@id/universityImage"
@@ -78,8 +78,8 @@
             android:id="@+id/continuedText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:layout_marginTop="10dp"
             android:text="@string/continued_text"
             app:layout_constraintTop_toBottomOf="@id/introText"
@@ -87,154 +87,166 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <TableLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@id/continuedText"
+            android:showDividers="middle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:stretchColumns="*"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:shrinkColumns="*"
             android:layout_marginTop="5sp">
 
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp">
-                <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="20dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:text="@string/table_upcoming_header"
+                    android:textAlignment="center"
                     android:layout_weight="1"
-                    >
-
-                    <TextView
-                        android:text="@string/table_upcoming_header"
-                        android:textAlignment="center"
-                        android:textStyle="bold"/>
-
-                </TableRow>
+                    android:textStyle="bold"/>
             </TableRow>
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="20dp"
-                android:layout_weight="1"
-                android:stretchColumns="0,1,2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:stretchColumns="1,2,3"
                 android:layout_marginBottom="5dp">
 
                 <TextView
-                    android:layout_width="134dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/table_site_header"
+                    android:layout_weight="1"
                     android:layout_column="0"
                     android:textStyle="bold"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_width="134dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/table_building_header"
                     android:layout_column="1"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:layout_width="134dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/table_date_header"
                     android:gravity="center"
                     android:textStyle="bold"
+                    android:layout_weight="1"
                     android:layout_column="2"/>
 
             </TableRow>
 
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="20dp"
-                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:stretchColumns="0,1,2">
 
                 <TextView
-                    android:layout_width="134dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/table_site_stoke"
+                    android:layout_weight="1"
                     android:layout_column="0"
                     android:textStyle="bold"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_width="134dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="@string/table_building_mellor"
                     android:layout_column="1"
                     android:gravity="center"
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:layout_width="134dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/table_building_date1"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:layout_column="2"/>
 
             </TableRow>
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="20dp"
-                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:stretchColumns="0,1,2">
 
                 <TextView
-                    android:layout_width="134dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/table_site_stoke"
+                    android:layout_weight="1"
                     android:layout_column="0"
                     android:textStyle="bold"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_width="134dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="@string/table_building_catalyst"
                     android:layout_column="1"
                     android:gravity="center"
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:layout_width="134dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/table_building_date2"
                     android:gravity="center"
+                    android:layout_weight="1"
                     android:textStyle="bold"
                     android:layout_column="2"/>
             </TableRow>
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="20dp"
-                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:stretchColumns="0,1,2"
                 android:layout_marginBottom="20dp">
 
                 <TextView
-                    android:layout_width="134dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/table_site_stoke"
                     android:layout_column="0"
                     android:textStyle="bold"
+                    android:layout_weight="1"
                     android:gravity="center"/>
 
                 <TextView
-                    android:layout_width="134dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/table_building_cadman"
                     android:layout_column="1"
                     android:gravity="center"
+                    android:layout_weight="1"
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:layout_width="134dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:text="@string/table_building_date3"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:layout_column="2"/>
