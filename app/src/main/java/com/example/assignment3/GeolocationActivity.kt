@@ -96,11 +96,11 @@ class GeolocationActivity : AppCompatActivity() {
         }
         fusedLocationProviderClient.lastLocation.addOnSuccessListener {
                 location: Location? -> if (location == null) {
-                    Toast.makeText(this, "problems", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Location not found", Toast.LENGTH_SHORT).show()
                 }
         else {
-            longTextView.text = location.longitude.toString()
-            latTextView.text = location.latitude.toString()
+            longTextView.text = "Longitude: " + location.longitude.toString()
+            latTextView.text = "Latitude: " + location.latitude.toString()
         }
         }
     }
