@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".HomeFragment">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -26,7 +26,7 @@
             android:id="@+id/homeGreeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello Guest"
+            android:text="@string/default_greeting_name"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,6 +43,7 @@
             android:background="@android:color/darker_gray"
             app:layout_constraintTop_toBottomOf="@id/homeGreeting"/>
 
+        <!--Image reference: https://unsplash.com/photos/MZxqc6n9qCw-->
         <ImageView
             android:id="@+id/universityImage"
             android:layout_width="400dp"
@@ -52,11 +53,13 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:contentDescription="Picture of a university"
+            android:contentDescription="@string/uni_image_content_desc"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/blank_space"/>
 
+        <!-- Reference for text is from the Staffs Uni website
+        (https://www.staffs.ac.uk/visit/undergraduate-open-day) -->
         <TextView
             android:id="@+id/introText"
             android:layout_width="match_parent"
@@ -64,11 +67,13 @@
             android:layout_marginLeft="7dp"
             android:layout_marginRight="7dp"
             android:layout_marginTop="10dp"
-            android:text="At one of our fantastic on-campus Open Days, you’ll be able to discover everything you need to know about why our award-winning institution is the first choice for thousands of students around the world."
+            android:text="@string/intro_text"
             app:layout_constraintTop_toBottomOf="@id/universityImage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
+        <!-- Reference for text is from the Staffs Uni website
+(       https://www.staffs.ac.uk/visit/undergraduate-open-day) -->
         <TextView
             android:id="@+id/continuedText"
             android:layout_width="match_parent"
@@ -76,7 +81,7 @@
             android:layout_marginLeft="7dp"
             android:layout_marginRight="7dp"
             android:layout_marginTop="10dp"
-            android:text="We know there's nothing quite like actually stepping onto campus to discover our facilities, check out our accommodation, learn more about your chosen course and meet your potential future lecturers  - but if you're unable to come onto campus, we also offer the next best thing: Virtual Open Days. These give you the chance to find out about everything Staffordshire University has to offer from the comfort of your own home."
+            android:text="@string/continued_text"
             app:layout_constraintTop_toBottomOf="@id/introText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -103,7 +108,7 @@
                     >
 
                     <TextView
-                        android:text="Upcoming Dates"
+                        android:text="@string/table_upcoming_header"
                         android:textAlignment="center"
                         android:textStyle="bold"/>
 
@@ -119,7 +124,7 @@
                 <TextView
                     android:layout_width="134dp"
                     android:layout_height="match_parent"
-                    android:text="Site"
+                    android:text="@string/table_site_header"
                     android:layout_column="0"
                     android:textStyle="bold"
                     android:gravity="center"/>
@@ -127,7 +132,7 @@
                 <TextView
                     android:layout_width="134dp"
                     android:layout_height="match_parent"
-                    android:text="Building"
+                    android:text="@string/table_building_header"
                     android:layout_column="1"
                     android:gravity="center"
                     android:textStyle="bold"/>
@@ -135,7 +140,7 @@
                 <TextView
                     android:layout_width="134dp"
                     android:layout_height="match_parent"
-                    android:text="Date/Time"
+                    android:text="@string/table_date_header"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:layout_column="2"/>
@@ -151,7 +156,7 @@
                 <TextView
                     android:layout_width="134dp"
                     android:layout_height="match_parent"
-                    android:text="Stoke-On-Trent"
+                    android:text="@string/table_site_stoke"
                     android:layout_column="0"
                     android:textStyle="bold"
                     android:gravity="center"/>
@@ -159,7 +164,7 @@
                 <TextView
                     android:layout_width="134dp"
                     android:layout_height="match_parent"
-                    android:text="Mellor"
+                    android:text="@string/table_building_mellor"
                     android:layout_column="1"
                     android:gravity="center"
                     android:textStyle="bold"/>
@@ -167,7 +172,7 @@
                 <TextView
                     android:layout_width="134dp"
                     android:layout_height="match_parent"
-                    android:text="14/06/2022 09:30am"
+                    android:text="@string/table_building_date1"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:layout_column="2"/>
@@ -182,7 +187,7 @@
                 <TextView
                     android:layout_width="134dp"
                     android:layout_height="match_parent"
-                    android:text="Stoke-On-Trent"
+                    android:text="@string/table_site_stoke"
                     android:layout_column="0"
                     android:textStyle="bold"
                     android:gravity="center"/>
@@ -190,7 +195,7 @@
                 <TextView
                     android:layout_width="134dp"
                     android:layout_height="match_parent"
-                    android:text="Catalyst"
+                    android:text="@string/table_building_catalyst"
                     android:layout_column="1"
                     android:gravity="center"
                     android:textStyle="bold"/>
@@ -198,7 +203,7 @@
                 <TextView
                     android:layout_width="134dp"
                     android:layout_height="match_parent"
-                    android:text="21/06/2022 11:00am"
+                    android:text="@string/table_building_date2"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:layout_column="2"/>
@@ -213,7 +218,7 @@
                 <TextView
                     android:layout_width="134dp"
                     android:layout_height="match_parent"
-                    android:text="Stoke-On-Trent"
+                    android:text="@string/table_site_stoke"
                     android:layout_column="0"
                     android:textStyle="bold"
                     android:gravity="center"/>
@@ -221,7 +226,7 @@
                 <TextView
                     android:layout_width="134dp"
                     android:layout_height="match_parent"
-                    android:text="Cadman"
+                    android:text="@string/table_building_cadman"
                     android:layout_column="1"
                     android:gravity="center"
                     android:textStyle="bold"/>
@@ -229,7 +234,7 @@
                 <TextView
                     android:layout_width="134dp"
                     android:layout_height="match_parent"
-                    android:text="14/06/2022 13:30pm"
+                    android:text="@string/table_building_date3"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:layout_column="2"/>
