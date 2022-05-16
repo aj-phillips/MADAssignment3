@@ -1,4 +1,4 @@
-package com.example.assignment3
+package com.example.assignment3.activities.home
 
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -6,8 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
+import com.example.assignment3.R
+import com.google.firebase.auth.FirebaseAuth
 import de.hdodenhof.circleimageview.CircleImageView
 import java.io.File
 
@@ -22,6 +25,8 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class HomeFragment : Fragment() {
+    private lateinit var mAuth : FirebaseAuth
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -32,6 +37,8 @@ class HomeFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        mAuth = FirebaseAuth.getInstance()
     }
 
     override fun onCreateView(
@@ -53,6 +60,11 @@ class HomeFragment : Fragment() {
         // Find components on the screen
         val nameText: TextView = view.findViewById(R.id.homeGreeting) as TextView
         val profileImage: CircleImageView = view.findViewById(R.id.profileImage)
+
+        val currentUser = mAuth.currentUser
+        if(currentUser != null) {
+            Toast.makeText(this.context, "Welcome, ${currentUser.email}!", Toast.LENGTH_SHORT).show()
+        }
 
         nameText.text = "Welcome to our open day, ${namePref.toString()}"
 

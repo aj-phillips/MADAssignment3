@@ -1,4 +1,4 @@
-package com.example.assignment3
+package com.example.assignment3.activities.societies
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,8 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.ParsedRequestListener
-import com.example.assignment3.model.Course
-import com.example.assignment3.model.Data
+import com.example.assignment3.R
+import com.example.assignment3.adapters.SocietyAdapter
+import com.example.assignment3.model.society.Data
+import com.example.assignment3.model.society.Society
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,16 +24,16 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [CoursesFragment.newInstance] factory method to
+ * Use the [SocietiesFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class CoursesFragment : Fragment() {
+class SocietiesFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
     private val dataList: MutableList<Data> = mutableListOf()
-    private lateinit var courseAdapter: CourseAdapter
+    private lateinit var societyAdapter: SocietyAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,15 +42,15 @@ class CoursesFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        courseAdapter = CourseAdapter(dataList)
+        societyAdapter = SocietyAdapter(dataList)
 
         AndroidNetworking.initialize(context)
 
-        AndroidNetworking.get("https://leg1tt.github.io/JsonData/courses.json").build()
-            .getAsObject(Course::class.java, object : ParsedRequestListener<Course> {
-                override fun onResponse(response: Course?) {
+        AndroidNetworking.get("https://leg1tt.github.io/JsonData/societies.json").build()
+            .getAsObject(Society::class.java, object : ParsedRequestListener<Society> {
+                override fun onResponse(response: Society?) {
                     response?.let { dataList.addAll(it.data) }
-                    courseAdapter.notifyDataSetChanged()
+                    societyAdapter.notifyDataSetChanged()
                 }
 
                 override fun onError(anError: ANError?) {
@@ -63,16 +65,16 @@ class CoursesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_courses, container, false)
+        return inflater.inflate(R.layout.fragment_societies, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recyclerViewComponent = view.findViewById<RecyclerView>(R.id.coursesList)
+        val recyclerViewComponent = view.findViewById<RecyclerView>(R.id.societiesList)
         recyclerViewComponent.layoutManager = LinearLayoutManager(this.context)
         recyclerViewComponent.addItemDecoration(DividerItemDecoration(this.context, OrientationHelper.VERTICAL))
-        recyclerViewComponent.adapter = courseAdapter
+        recyclerViewComponent.adapter = societyAdapter
     }
 
     companion object {
@@ -82,12 +84,12 @@ class CoursesFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment CoursesFragment.
+         * @return A new instance of fragment SocietiesFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            CoursesFragment().apply {
+            SocietiesFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

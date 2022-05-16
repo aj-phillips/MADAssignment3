@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="courseName" type="id" />
+    <item name="societyName" type="id" />
+    <item name="welcomeLoginText" type="id" />
+</resources>

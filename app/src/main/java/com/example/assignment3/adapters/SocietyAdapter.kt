@@ -1,4 +1,4 @@
-package com.example.assignment3
+package com.example.assignment3.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.assignment3.R
+import com.example.assignment3.holders.SocietyHolder
 import com.example.assignment3.model.society.Data
 import com.squareup.picasso.Picasso
 

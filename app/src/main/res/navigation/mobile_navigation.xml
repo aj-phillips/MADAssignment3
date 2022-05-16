@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_societies" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.assignment3.SettingsFragment"
+        android:name="com.example.assignment3.activities.settings.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
 

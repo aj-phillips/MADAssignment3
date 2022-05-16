@@ -1,4 +1,4 @@
-package com.example.assignment3
+package com.example.assignment3.activities.settings
 
 import android.app.AlertDialog
 import android.content.DialogInterface
@@ -11,6 +11,13 @@ import android.widget.Toast
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
+import com.example.assignment3.BuildConfig
+import com.example.assignment3.activities.login.LoginActivity
+import com.example.assignment3.R
+import com.example.assignment3.activities.camera.CameraActivity
+import com.example.assignment3.activities.geolocation.GeolocationActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import java.io.File
 
 
@@ -33,6 +40,14 @@ class SettingsFragment : PreferenceFragmentCompat() {
         // When Reset Storage Data is clicked, run the resetStorageData function
         findPreference<Preference>("testGeolocationBtn")?.setOnPreferenceClickListener {
             openGeolocationActivity()
+            true
+        }
+
+        // When Reset Storage Data is clicked, run the resetStorageData function
+        findPreference<Preference>("signOutBtn")?.setOnPreferenceClickListener {
+            Firebase.auth.signOut()
+            activity?.finish()
+            openLogin()
             true
         }
     }
@@ -67,6 +82,13 @@ class SettingsFragment : PreferenceFragmentCompat() {
         startActivity(openCameraActivity)
     }
 
+    // Open the separate camera activity
+    private fun openLogin() {
+        val openLoginActivity = Intent(activity, LoginActivity::class.java)
+        startActivity(openLoginActivity)
+    }
+
+    // Open the geolocation activity
     private fun openGeolocationActivity()
     {
         val openGeolocation = Intent(activity, GeolocationActivity::class.java)

@@ -1,4 +1,4 @@
-package com.example.assignment3
+package com.example.assignment3.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.assignment3.model.Data
+import com.example.assignment3.holders.CourseHolder
+import com.example.assignment3.R
+import com.example.assignment3.model.course.Data
 import com.squareup.picasso.Picasso
 
 class CourseAdapter(private val dataList: MutableList<Data>) : RecyclerView.Adapter<CourseHolder>() {
@@ -28,7 +30,6 @@ class CourseAdapter(private val dataList: MutableList<Data>) : RecyclerView.Adap
         val courseSummaryTextView = holder.itemView.findViewById<TextView>(R.id.courseSummary)
 
         // Set variables to data values
-        val imageURL = "${data.image}"
         val courseName = "${data.name}"
         val courseSummary = "${data.summary}"
 

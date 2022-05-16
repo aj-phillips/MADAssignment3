@@ -1,4 +1,4 @@
-package com.example.assignment3
+package com.example.assignment3.activities.geolocation
 
 import android.content.Context
 import android.content.Intent
@@ -13,8 +13,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.example.assignment3.R
 import com.google.android.gms.location.*
-import java.util.jar.Manifest
 
 class GeolocationActivity : AppCompatActivity() {
     private var REQUEST_LOCATION_CODE = 101

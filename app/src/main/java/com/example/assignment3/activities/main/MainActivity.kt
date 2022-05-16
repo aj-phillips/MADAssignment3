@@ -1,4 +1,4 @@
-package com.example.assignment3
+package com.example.assignment3.activities.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
+import com.example.assignment3.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +29,12 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
         // Sets navigation menu links to the fragments we've created
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.coursesFragment, R.id.societiesFragment, R.id.settingsFragment))
+        val appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.homeFragment,
+            R.id.coursesFragment,
+            R.id.societiesFragment,
+            R.id.settingsFragment
+        ))
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         bottomNavigationView.setupWithNavController(navController)

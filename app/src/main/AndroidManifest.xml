@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment3">
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,13 +27,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GeolocationActivity"
+            android:name=".activities.geolocation.GeolocationActivity"
             android:exported="false" />
         <activity
-            android:name=".CameraActivity"
+            android:name=".activities.camera.CameraActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.main.MainActivity"
             android:exported="false"
             android:label="@string/app_name">
         </activity>

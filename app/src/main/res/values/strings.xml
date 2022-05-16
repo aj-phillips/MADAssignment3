@@ -14,68 +14,72 @@
     <string name="longitude_text">Longitude:</string>
 
     <!-- Home Fragment -->
-    <string name="default_greeting_name">Hello Guest</string>
-    <string name="uni_image_content_desc">Picture of a university</string>
-    <string name="intro_text">At one of our fantastic on-campus Open Days, you’ll be able to discover everything you need to know about why our award-winning institution is the first choice for thousands of students around the world.</string>
-    <string name="continued_text">We know there\'s nothing quite like actually stepping onto campus to discover our facilities, check out our accommodation, learn more about your chosen course and meet your potential future lecturers  - but if you\'re unable to come onto campus, we also offer the next best thing: Virtual Open Days. These give you the chance to find out about everything Staffordshire University has to offer from the comfort of your own home.</string>
+        <string name="default_greeting_name">Hello Guest</string>
+        <string name="uni_image_content_desc">Picture of a university</string>
+        <string name="intro_text">At one of our fantastic on-campus Open Days, you’ll be able to discover everything you need to know about why our award-winning institution is the first choice for thousands of students around the world.</string>
+        <string name="continued_text">We know there\'s nothing quite like actually stepping onto campus to discover our facilities, check out our accommodation, learn more about your chosen course and meet your potential future lecturers  - but if you\'re unable to come onto campus, we also offer the next best thing: Virtual Open Days. These give you the chance to find out about everything Staffordshire University has to offer from the comfort of your own home.</string>
 
-    <!-- Table Strings -->
-    <string name="table_upcoming_header">Upcoming Dates</string>
-    <string name="table_site_header">Site</string>
-    <string name="table_building_header">Building</string>
-    <string name="table_date_header">Date/Time</string>
-    <string name="table_site_stoke">Stoke-On-Trent</string>
-    <string name="table_building_mellor">Mellor</string>
-    <string name="table_building_catalyst">Catalyst</string>
-    <string name="table_building_cadman">Cadman</string>
-    <string name="table_building_date1">14/06/2022 09:30am</string>
-    <string name="table_building_date2">21/06/2022 11:00am</string>
-    <string name="table_building_date3">14/06/2022 13:30pm</string>
+        <!-- Table Strings -->
+        <string name="table_upcoming_header">Upcoming Dates</string>
+        <string name="table_site_header">Site</string>
+        <string name="table_building_header">Building</string>
+        <string name="table_date_header">Date/Time</string>
+        <string name="table_site_stoke">Stoke-On-Trent</string>
+        <string name="table_building_mellor">Mellor</string>
+        <string name="table_building_catalyst">Catalyst</string>
+        <string name="table_building_cadman">Cadman</string>
+        <string name="table_building_date1">14/06/2022 09:30am</string>
+        <string name="table_building_date2">21/06/2022 11:00am</string>
+        <string name="table_building_date3">14/06/2022 13:30pm</string>
+
     <!-- Home Fragment -->
 
     <!-- Course Item View -->
-    <string name="course_image_desc">Picture of the course subject</string>
-    <string name="course_title">Course Title</string>
-    <string name="course_summary">Course Summary</string>
+        <string name="course_image_desc">Picture of the course subject</string>
+        <string name="course_title">Course Title</string>
+        <string name="course_summary">Course Summary</string>
     <!-- Course Item View -->
 
     <!-- Society Item View -->
-    <string name="society_image_desc">Picture of the society</string>
-    <string name="society_title">Society Title</string>
-    <string name="society_summary">Society Summary</string>
+        <string name="society_image_desc">Picture of the society</string>
+        <string name="society_title">Society Title</string>
+        <string name="society_summary">Society Summary</string>
     <!-- Society Item View -->
 
     <!-- Settings Fragment -->
-    <!-- Preference Titles -->
-    <string name="account_header">Account</string>
-    <string name="device_header">Device Features</string>
-    <string name="information_header">Device Information</string>
-    <string name="other_header">Other</string>
 
-    <!-- Account Preferences -->
-    <string name="profile_title">Profile Picture</string>
-    <string name="profile_summary">Tap here to add your profile picture</string>
-    <string name="name_title">Name</string>
-    <string name="dob_title">Date of Birth</string>
-    <string name="gender_title">Gender</string>
+        <!-- Preference Titles -->
+        <string name="account_header">Account</string>
+        <string name="device_header">Device Features</string>
+        <string name="information_header">Device Information</string>
+        <string name="other_header">Other</string>
 
-    <!-- Device Features Preferences -->
-    <string name="geolocation_title">Test Geolocation</string>
-    <string name="geolocation_desc">Click here to test geolocation on the device</string>
+        <!-- Account Preferences -->
+        <string name="profile_title">Profile Picture</string>
+        <string name="profile_summary">Tap here to add your profile picture</string>
+        <string name="name_title">Name</string>
+        <string name="dob_title">Date of Birth</string>
+        <string name="gender_title">Gender</string>
 
-    <!-- Other Preferences -->
-    <string name="data_title">Data</string>
-    <string name="reset_title">Reset Storage Data</string>
-    <string name="reset_desc">Click here to reset stored preferences</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+        <!-- Device Features Preferences -->
+        <string name="geolocation_title">Test Geolocation</string>
+        <string name="geolocation_desc">Tap here to test geolocation on the device</string>
+
+        <!-- Other Preferences -->
+        <string name="data_title">Data</string>
+        <string name="reset_title">Reset Storage Data</string>
+        <string name="reset_desc">Tap here to reset stored preferences</string>
+        <string name="signout_title">Sign Out Of Account</string>
+        <string name="signout_desc">Tap here to sign out of your account</string>
+        <string name="title_activity_login">LoginActivity</string>
+        <string name="prompt_email">Email</string>
+        <string name="prompt_password">Password</string>
+        <string name="action_sign_in">Sign in or register</string>
+        <string name="action_sign_in_short">Sign in</string>
+        <string name="welcome">"Welcome !"</string>
+        <string name="invalid_username">Not a valid username</string>
+        <string name="invalid_password">Password must be >5 characters</string>
+        <string name="login_failed">"Login failed"</string>
+
     <!-- Settings Fragment -->
-
 </resources>

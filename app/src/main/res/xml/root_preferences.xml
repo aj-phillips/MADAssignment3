@@ -48,6 +48,13 @@
             android:summary="@string/reset_desc"
             android:title="@string/reset_title" />
 
+        <!-- Acts as a button -->
+        <Preference
+            app:iconSpaceReserved="false"
+            android:key="signOutBtn"
+            android:summary="@string/signout_desc"
+            android:title="@string/signout_title" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

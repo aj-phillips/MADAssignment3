@@ -1,4 +1,4 @@
-package com.example.assignment3
+package com.example.assignment3.activities.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,14 +7,15 @@ import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.firebase.client.Firebase
+import com.example.assignment3.R
+import com.example.assignment3.activities.main.MainActivity
 import com.google.firebase.auth.FirebaseAuth
-import org.w3c.dom.Text
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var emailField : EditText
     private lateinit var passwordField : EditText
     private lateinit var loginButton : Button
+    private lateinit var registerButton : Button
 
     private lateinit var mAuth : FirebaseAuth
 
@@ -27,9 +28,24 @@ class LoginActivity : AppCompatActivity() {
         emailField = findViewById(R.id.emailAddress)
         passwordField = findViewById(R.id.loginPassword)
         loginButton = findViewById(R.id.loginButton)
+        registerButton = findViewById(R.id.registerButton)
 
         loginButton.setOnClickListener {
             startSignIn()
+        }
+
+        registerButton.setOnClickListener {
+            Toast.makeText(this.applicationContext, "Not implemented", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        val currentUser = mAuth.currentUser
+        if(currentUser != null){
+            createMainActivity()
+            finish()
         }
     }
 
@@ -46,8 +62,10 @@ class LoginActivity : AppCompatActivity() {
                 if (!task.isSuccessful) {
                     Toast.makeText(this.applicationContext, "Invalid credentials or other problem",
                         Toast.LENGTH_SHORT).show()
+                    return@addOnCompleteListener
                 }
                 createMainActivity()
+                finish()
             }
         }
     }
