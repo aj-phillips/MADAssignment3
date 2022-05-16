@@ -46,6 +46,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         // When Reset Storage Data is clicked, run the resetStorageData function
         findPreference<Preference>("signOutBtn")?.setOnPreferenceClickListener {
             Firebase.auth.signOut()
+            Toast.makeText(this.context, "Successfully signed out", Toast.LENGTH_SHORT).show()
             activity?.finish()
             openLogin()
             true
